@@ -8,6 +8,7 @@ class SuperArrayMap<V>(
     var list: MutableList<V?> = ArrayList()
 ) : MutableMap<Any, V> by map, MutableList<V?> by list {
 
+
     override fun clear() {
         map.clear();
         list.clear();
