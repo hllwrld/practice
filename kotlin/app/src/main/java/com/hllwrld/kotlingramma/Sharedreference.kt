@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 package com.hllwrld.kotlingramma
 
-=======
 import android.content.Context
 import android.content.SharedPreferences
 import kotlin.properties.ReadWriteProperty
@@ -48,8 +46,3 @@ class SharedreferenceExt<T>(val mContext: Context, val mName: String, val defalu
 
 }
 
-
-fun main() {
-
-}
->>>>>>> sharedpreference delegate
