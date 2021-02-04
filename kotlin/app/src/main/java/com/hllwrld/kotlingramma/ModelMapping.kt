@@ -1,6 +1,5 @@
 package com.hllwrld.kotlingramma
 
-import java.lang.IllegalArgumentException
 import kotlin.reflect.KClass
 import kotlin.reflect.full.findAnnotation
 import kotlin.reflect.full.memberProperties
