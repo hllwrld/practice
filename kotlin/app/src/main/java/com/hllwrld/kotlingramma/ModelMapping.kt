@@ -1,6 +1,8 @@
 package com.hllwrld.kotlingramma
 
+import java.lang.IllegalArgumentException
 import kotlin.reflect.KClass
+import kotlin.reflect.full.findAnnotation
 import kotlin.reflect.full.memberProperties
 import kotlin.reflect.full.primaryConstructor
 
@@ -21,10 +23,10 @@ data class UserDTO(
 )
 
 @Target(AnnotationTarget.FIELD)
-annotation class FiledName(val name:String)
+annotation class FieldName(val name:String)
 
-@Target(AnnotationTarget.ANNOTATION_CLASS)
-annotation class MappingStrategy(val name:KClass<>)
+@Target(AnnotationTarget.CLASS)
+annotation class MappingStrategy(val name:KClass<out Strategy>)
 
 interface Strategy {
     fun mapTo(from:String):String
@@ -41,6 +43,7 @@ object CamelToUnderScore :Strategy {
                 else ->
                     acc.append(c)
             }
+            acc
         }.toString()
     }
 
@@ -88,7 +91,10 @@ inline fun <reified To : Any> Map<String, Any?>.mapAs(): To {
    return To::class.primaryConstructor!!.let {
         it.parameters.map {
             parameter -> parameter to (this[parameter.name] ?:
-            parameter.annotations.filterIsInstance<FiledName> {  }
+            parameter.annotations.filterIsInstance<FieldName>().firstOrNull()?.name?.let(this::get)?:
+            To::class.findAnnotation<MappingStrategy>()?.name?.objectInstance?.mapTo(parameter.name!!)?.let (this::get)?:
+            if (parameter.type.isMarkedNullable) null
+            else throw IllegalArgumentException("${parameter.name} is required but missing."))
         }.toMap().let ( it::callBy )
     }
 }
