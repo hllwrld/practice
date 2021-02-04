@@ -8,6 +8,7 @@ import kotlin.reflect.full.primaryConstructor
 data class UserVO(
         val login: String,
         @FieldName("avatar_url")
+        //@FieldName("avatar_url")
         val avatarUrl: String,
         var htmlUrl: String
 )
@@ -89,6 +90,7 @@ inline fun <reified To : Any> Map<String, Any?>.mapAs(): To {
         it.parameters.map {
             parameter -> parameter to (this[parameter.name] ?:
             parameter.annotations.filterIsInstance<FiledName> {  }
+            parameter -> parameter to this[parameter.name]
         }.toMap().let ( it::callBy )
     }
 }
