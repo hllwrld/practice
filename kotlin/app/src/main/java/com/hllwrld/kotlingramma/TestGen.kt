@@ -20,6 +20,6 @@ internal class GenericTypeOut<out T: Frute1> {
 internal  fun print(param:GenericTypein<Apple1>) {}
 
 fun main() {
-    val gen = GenericTypein<>()
-    val gen1 = GenericTypeOut<Apple1>()
+  //  val gen = GenericTypein<>()
+    //val gen1 = GenericTypeOut<Apple1>()
 }

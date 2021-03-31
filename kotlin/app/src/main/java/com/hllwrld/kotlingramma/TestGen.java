@@ -32,17 +32,21 @@ class TestGen {
        print1(new GenericType<Food>());
 
        GenericType<? extends Frute> frute = new GenericType<>();
-      // frute.setData(new Apple());
+/*
+       frute.setData(new Apple());
         frute.setData(new Food());
 
 
         Apple apple = frute.getData();
-        Frute frute1 = frute.getData();
+*/
+        Food frute1 = frute.getData();
 
 
         GenericType<? super Apple> apppleType = new GenericType<>();
-        apppleType.setData(new Frute());
-        Frute frute2 = apppleType.getData();
+
+        apppleType.setData(new Apple());
+//        Frute frute2 = apppleType.getData();
+
 
     }
 
