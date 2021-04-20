@@ -28,8 +28,7 @@ class LoginViewModel(val mLoginRepository: LoginRepository)   {
             mLoginRepository.query()
              println("after query:${Thread.currentThread().name} ")
          }
-
-
+         println("after block:${Thread.currentThread().name} ")
      }
 }
 
