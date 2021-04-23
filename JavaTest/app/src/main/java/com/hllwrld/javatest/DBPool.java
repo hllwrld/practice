@@ -1,13 +1,10 @@
 package com.hllwrld.javatest;
 
-import java.sql.Connection;
-import java.util.LinkedList;
-
 /**
  *类说明：连接池的实现
  */
 public class DBPool {
-
+/*
     private static LinkedList<Connection> pool = new LinkedList<Connection>();
 
     public DBPool(int initialSize) {
@@ -29,4 +26,6 @@ public class DBPool {
         //TODO
         return null;
     }
+    */
+
 }

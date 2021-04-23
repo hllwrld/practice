@@ -1,10 +1,7 @@
 package com.hllwrld.javatest;
 
-import java.util.LinkedList;
-import java.util.List;
-
 class ConnectionPool {
-
+/*
 
     class Connection {
         public void doJob() {
@@ -98,4 +95,6 @@ class ConnectionPool {
     }
 
 
+
+ */
 }
