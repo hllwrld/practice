@@ -1,2 +1,5 @@
 include ':app'
 rootProject.name = "JavaTest"
+include ':interfaces'
+include ':moduleA'
+include ':ModuleB'
