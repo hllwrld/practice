@@ -32,8 +32,30 @@ class LoginViewModel(val mLoginRepository: LoginRepository)   {
      }
 }
 
+
+/*
 fun main() {
-    val loginViewModel:LoginViewModel = LoginViewModel(LoginRepository())
-    loginViewModel.login()
+
+    runBlocking() {
+
+            println("bbbbbbb")
+
+        withContext(Dispatchers.IO) {
+
+            println("cccccccc")
+        }
+
+        println("ddddddd")
+
+        withContext(Dispatchers.IO) {
+
+            println("eeeeee")
+        }
+        println("ffffff")
+
+    }
+
+    println("aaaaaaa")
 }
 
+*/
