@@ -1,4 +1,5 @@
 package com.hllwrld.kotlingramma
+/*
 
 import java.io.File
 
@@ -85,3 +86,4 @@ fun main() {
     File("Kotlin.html").writeText(htmlContent)
 }
 
+*/
